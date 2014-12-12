@@ -1,15 +1,14 @@
-<<<<<<< .merge_file_xFirhA
 Bloccit::Application.routes.draw do
   resources :posts
   get 'about' => 'welcome#about'
   root to: 'welcome#index'
-=======
-Rails.application.routes.draw do
-  get 'welcome/index'
 
-  get 'welcome/about'
+#Rails.application.routes.draw do
+#  get 'welcome/index'
 
-  root to: 'welcome#index'
+#  get 'welcome/about'
+
+#  root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -64,5 +63,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
->>>>>>> .merge_file_gOc5fz
 end
