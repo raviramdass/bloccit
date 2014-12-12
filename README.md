@@ -25,6 +25,9 @@ Things you may want to cover:
 
 * ...
 
+## Bloccit: Heroku URL
+https://dashboard.heroku.com/apps/raviramdass-bloccit/resources
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
