@@ -1,0 +1,54 @@
+[33mcommit 598748b957a767936f6b2f42e0e8d311d5036714[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Sat Dec 13 20:31:20 2014 +0000
+
+    Updated bloccit layout files 12-13-14 @ 3:31
+
+[33mcommit 5f567a93536a1f78811b64d5fc2103da40b07ce6[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Fri Dec 12 23:36:15 2014 +0000
+
+    Updated layout files
+
+[33mcommit a558df4783956059199d0169902277cae2bcec33[m
+Merge: 3f21b63 032ea5f 21421c3
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Fri Dec 12 22:56:24 2014 +0000
+
+    Updated layout files
+
+[33mcommit 3f21b6322252338fc013c20f27000ea85febdc69[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Fri Dec 12 20:41:55 2014 +0000
+
+    Update controller and index files
+
+[33mcommit 032ea5f443e3e654a2ea151e6d3a20ea596a2446[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Fri Dec 12 15:03:04 2014 +0000
+
+    Add posts to Bloccit database using Faker
+
+[33mcommit 5a4c4dcfa3ed57d1bdc8d94685262dd9d4de69d2[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Fri Dec 12 02:45:58 2014 +0000
+
+    Created Post and Comment models with relationships
+
+[33mcommit 148c33e58fdd3c460dbfcb0860867030d75ad66d[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Fri Dec 12 00:31:00 2014 +0000
+
+    Installed bootstrap and styled nav area.
+
+[33mcommit 21421c34f00a5db072a82b54f3057680cb6fab92[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Thu Dec 11 17:18:35 2014 +0000
+
+    Created Heroku Rails app
+
+[33mcommit d3437a7b45d58119f04a2d64a6f9bf52302ff3c6[m
+Author: Ravi Ramdass <ravi.ramdass@gmail.com>
+Date:   Thu Dec 11 14:38:57 2014 +0000
+
+    First commit and README update
