@@ -74,7 +74,7 @@ Bloccit::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+#   config.active_record.dump_schema_after_migration = false
   
   # http://bloccit.herokuapp.com
    config.action_mailer.default_url_options = { host: 'bloccit.herokuapp.com' }
