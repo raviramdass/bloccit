@@ -1,11 +1,11 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
 
-<h1><%= @post.title %></h1>
+<h1><%= markdown @post.title %></h1>
 
 <div class="row">
   <div class="col-md-8">
-    <p><%= @post.body %></p>
+  <h1><%= markdown @post.title %></h1>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
