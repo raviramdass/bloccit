@@ -1,5 +1,4 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+
 <h1><%= @topic.name %></h1>
 
 <% if policy(@topic).update? %>
@@ -15,10 +14,12 @@
            <h4 class="media-heading">
    <%= link_to (markdown post.title), [@topic, post] %>
  </h4>
-          <small>
-     submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
-     <%= post.comments.count %> Comments
-   </small>
+           <small>
+             <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
+             submitted <%= time_ago_in_words(post.created_at) %> ago by
+             <%= post.user.name %><br/>
+             <%= post.comments.count %> Comments
+           </small>     
         </div>
       </div>
     <% end %>

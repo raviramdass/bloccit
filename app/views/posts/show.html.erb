@@ -1,12 +1,14 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
 
 <h1><%= markdown @post.title %></h1>
 
 <div class="row">
   <div class="col-md-8">
-  <h1><%= markdown @post.title %></h1>
-  </div>
+    <small>
+       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
+       submitted <%= time_ago_in_words(@post.created_at) %> ago by
+       <%= @post.user.name %>
+     </small>
+    </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>

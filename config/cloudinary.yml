@@ -1,0 +1,18 @@
+development:
+  cloud_name: hwovk7z8m
+  api_key: '522166939788345'
+  api_secret: VU9UbAzKIWxrP--8kjdEFCuqW8g
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hwovk7z8m
+  api_key: '522166939788345'
+  api_secret: VU9UbAzKIWxrP--8kjdEFCuqW8g
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hwovk7z8m
+  api_key: '522166939788345'
+  api_secret: VU9UbAzKIWxrP--8kjdEFCuqW8g
+  enhance_image_tag: true
+  static_image_support: false

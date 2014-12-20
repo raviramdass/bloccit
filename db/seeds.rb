@@ -50,7 +50,7 @@ posts = Post.all
 
  # Create an admin user
  admin = User.new(
-   name:     'Admin User',
+   name:     'Admin',
    email:    'admin@example.com',
    password: 'helloworld',
    role:     'admin'
@@ -60,7 +60,7 @@ posts = Post.all
  
  # Create a moderator
  moderator = User.new(
-   name:     'Moderator User',
+   name:     'Moderator',
    email:    'moderator@example.com', 
    password: 'helloworld',
    role:     'moderator'
@@ -70,7 +70,7 @@ posts = Post.all
  
  # Create a member
  member = User.new(
-   name:     'Member User',
+   name:     'Member',
    email:    'member@example.com',
    password: 'helloworld',
  )
