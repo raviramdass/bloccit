@@ -1,44 +1,29 @@
-
-<h1><%= markdown @post.title %></h1>
+<h1><%= markdown @post.title %></h1> 
 
 <div class="row">
   <div class="col-md-8">
     <small>
-       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
-       submitted <%= time_ago_in_words(@post.created_at) %> ago by
-       <%= @post.user.name %>
-     </small>
-    </div>
+      <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
+      submitted <%= time_ago_in_words(@post.created_at) %> ago by
+      <%= @post.user.name %>
+    </small>
+    <div class="img-responsive"> <p style="color:red;">Where is your image attribute for your Post?</p> </div> 
+    <p><%= markdown @post.body.to_s %></p>
+  </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
-      <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+      <%= link_to "Edit post", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
-  <h2>Comments</h2>
-  <% @post.comments.each do |comment| %>
-    <p>
-      <%= comment.user %>
-    </p>
-  
-    <p>
-      <%= comment.body %>
-    </p>
-  <% end %>
-  
-  <h2>Add a comment:</h2>
-  <%= form_for([@post, @post.comments.build]) do |f| %>
-    <p>
-      <%= f.label :user %><br>
-      <%= f.test_field :user %>
-    </p>
-    <p>
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-  <% end %>
-  
-  <%= link_to 'Back', post_path %> |
-  <%= link_to 'Edit', edit_post_path(@post) %>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Comments</h2>
+    <%= render @comments %>
+  </div>
+  <div class="col-md-6">
+    <h2>Have something to say?</h2>
+    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+  </div>
+</div>

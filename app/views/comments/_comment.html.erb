@@ -1,0 +1,4 @@
+<blockquote>
+  <p><%= comment.body %></p>
+  <footer><%= image_tag(User.find(comment.user_id).avatar.tiny.url) %>  <%= comment.user.name || comment.user.email %>, posted <%= time_ago_in_words(comment.created_at) %> ago.</footer>
+</blockquote>
