@@ -1,6 +1,5 @@
 Bloccit::Application.routes.draw do
 
-
   devise_for :users
 
   resources :users, only: [:update]
@@ -8,10 +7,9 @@ Bloccit::Application.routes.draw do
   #nested routes
   resources :topics do
     resources :posts, except: [:index] do
-      resources :comments, only: [:create, :new]
+      resources :comments, only: [:create, :new, :destroy]
     end
   end
-  
 
   get 'about' => 'welcome#about'
   
