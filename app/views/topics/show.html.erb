@@ -1,4 +1,3 @@
-
 <h1><%= @topic.name %></h1>
 
 <% if policy(@topic).update? %>
@@ -10,9 +9,10 @@
     <p class="lead"><%= @topic.description %></p>
     <% @posts.each do |post| %>
       <div class="media">
+        <%= render partial: 'votes/voter', locals: { topic: @topic, post: post } %>
         <div class="media-body">
            <h4 class="media-heading">
-   <%= link_to (markdown post.title), [@topic, post] %>
+             <%= link_to (markdown post.title), [@topic, post] %>
  </h4>
            <small>
              <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
+  has_many :votes, dependent: :destroy
   
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
