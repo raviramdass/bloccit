@@ -15,6 +15,9 @@ class Vote < ActiveRecord::Base
     value == -1
   end
   
+  def create
+  end
+  
   private
   
   def update_post
