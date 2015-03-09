@@ -7,7 +7,14 @@ class Comment < ActiveRecord::Base
   validates :user_id, presence: true
   
   after_create :send_favorite_emails
-  
+ 
+  def send_favorite_emails
+    post.favorites.each do |favorite|
+      if should_receive_update_for?(favorite)
+        FavoriteMailer.new_comment(favorite.user, post, self).deliver
+      end
+    end
+  end
   private
   
   def send_favorite_emails

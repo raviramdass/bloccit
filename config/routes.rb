@@ -3,7 +3,7 @@ Bloccit::Application.routes.draw do
   devise_for :users
   resources :posts
   resources :topics
-  resources :users, only: [:update]
+  resources :users
 
   #nested routes
   resources :topics do
