@@ -1,9 +1,8 @@
 class Vote < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
-  #attr_accessible :value, :post
   
-  validates :value, inclusion: { in: [-1, 1], message: "%{value} is not a valid vote." }
+  validates :value, inclusion: { in: [-1, 1], message: "value must be 1 or -1." }
   
   after_save :update_post
   
@@ -21,7 +20,7 @@ class Vote < ActiveRecord::Base
   private
   
   def update_post
-    self.post.update_rank
+   post.update_rank
   end
   
 end

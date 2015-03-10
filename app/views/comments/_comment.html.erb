@@ -1,21 +1,18 @@
-<blockquote>
-  <p><%= comment.body %></p>
-  <footer><%= image_tag(User.find(comment.user_id).avatar.tiny.url) %>  <%= comment.user.name || comment.user.email %>, posted <%= time_ago_in_words(comment.created_at) %> ago.</footer>
-</blockquote>
 
-<div class="media">
-  <%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
-  <%= link_to '#', class: 'pull-left' do %>
-    <%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
+  <% if comment.user.avatar? %>
+    <%= link_to '#', class: 'pull-left' do %>
+    <%= image_tag (comment.user.avatar.small.url) %>
   <% end %>
-  <div class="media-body">
-    <small>
-      <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+<% end %>
+
+<div class="media-body">
+  <%= content_tag(:small) do %>
+  <%= (comment.user.name || comment.user.email) %> commented <%= time_ago_in_words(comment.created_at) %> ago
       <% if policy(comment).destroy? %>
-        | <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+  | <%= link_to "Delete", [comment.post, comment], method: :delete %>
       <% end %>
-    </small>
-    <p><%= comment.body %></p>
+  <% end %>
+  <%= content_tag(:p, comment.body) %>
   </div>
-</div>
 <% end %>
