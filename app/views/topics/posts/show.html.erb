@@ -26,7 +26,7 @@
     <%= pluralize(@post.down_votes, 'down vote') %>
   </small>
 </div>
-<%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %> 
+<%= render partial: 'favorites/favorite', locals: { post: @post } %> 
 <hr>
 <div class="row">
   <div class="col-md-6">
@@ -34,7 +34,8 @@
     <%= render partial: 'comments/comment', collection: @comments %>
   </div>
   <div class="col-md-6">
-    <h2>Have something to say?</h2>
-    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+    <div class='js-comments'>
+      <%= render partial: 'comments/form', locals: { post: @post, comment: Comment.new } %>
+    </div>
   </div>
 </div>
