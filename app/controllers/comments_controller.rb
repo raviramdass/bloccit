@@ -1,40 +1,40 @@
 class CommentsController < ApplicationController
+  respond_to :html, :js
   
   def create
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     @comments = @post.comments
     @comment = current_user.comments.build(comment_params)
     @comment.post = @post
     @new_comment = Comment.new
 
-#   authorize @comment
+    authorize @comment
     if @comment.save
-      redirect_to [@topic, @post], notice: "Comment posted sucessfully!"
+      redirect_to [@post.topic, @post], notice: "Comment posted sucessfully!"
     else
       flash[:error] = "Comment failed. Please try again."
-      redirect_to [@topic, @post]
+      redirect_to [@post]
     end
   end
 
  def destroy
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
+    @post = Post.find(params[:post_id]) 
+    @topic = @post.topic
     @comment = @post.comments.find(params[:id])
-    
     authorize @comment
-    if @comment.destroy
+    
+   if @comment.destroy
       flash[:notice] = "Comment was removed."
-      #redirect_to [@topic, @post]
+      #redirect_to [@post.topic, @post]
     else
       flash[:error] = "Comment couldn't be deleted. Try again"
-      #redirect_to [@topic, @post]
+      #redirect_to [@post.topic, @post]
     end
       respond_to do |format|
         format.html
         format.js   
   end
-  
+ end
   private
 
   def comment_params
